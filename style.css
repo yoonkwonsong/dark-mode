@@ -1,12 +1,35 @@
+:root {
+    --main-back: white;
+    --nav-color: black;
+    --btn-color: white;
+    --btn-back: rgb(255, 30, 30);
+    --card-title: rgb(255, 30, 30);
+    --dates-color: rgb(116, 116, 116);
+    --text-color: rgb(78, 78, 78);
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    transition: all 0.5s ease-in-out;
+
     /* outline: 1px solid red; */
 }
 
+.dark {
+    --main-back: rgb(10, 32, 48);
+    --nav-color: rgb(221, 221, 221);
+    --btn-color: rgb(21, 50, 70);
+    --btn-back: rgb(255, 153, 153);
+    --card-title: rgb(255, 153, 153);
+    --dates-color: rgb(197, 197, 197);
+    --text-color: rgb(221, 221, 221);
+}
+
 main {
-    min-height: 100vh;
+    background-color: var(--main-back);
     padding: 0 100px;
 }
 
@@ -18,14 +41,15 @@ main > nav {
 }
 
 main > nav > h1 {
+    color: var(--nav-color);
     font-size: 50px;
     font-weight: 500;
     letter-spacing: 5px;
 }
 
 main > nav > .btn {
-    background-color: rgb(228, 101, 101);
-    color: white;
+    background-color: var(--btn-back);
+    color: var(--btn-color);
     border: none;
     padding: 5px 12px;
     letter-spacing: 2px;
@@ -34,20 +58,21 @@ main > nav > .btn {
 }
 
 .content {
-    margin: 50px 0;
+    padding: 50px 0;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .card > h1 {
     font-size: 30px;
-    color: rgb(255, 74, 74);
+    color: var(--card-title);
     padding: 5px 0;
     letter-spacing: 2px;
+    text-transform: capitalize;
 }
 
 .card > .dates {
@@ -56,7 +81,7 @@ main > nav > .btn {
 
 .card > .dates > h3 {
     font-size: 14px;
-    color: rgb(116, 116, 116);
+    color: var(--dates-color);
     font-style: italic;
     margin-right: 12px;
     font-weight: 500;
@@ -66,5 +91,5 @@ main > nav > .btn {
 .card > p {
     padding: 10px 0;
     line-height: 20px;
-    color: rgb(78, 78, 78);
+    color: var(--text-color);
 }

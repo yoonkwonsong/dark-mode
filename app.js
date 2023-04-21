@@ -28,3 +28,27 @@ const articles = [
         snippet: `Selvage street art hammock affogato VHS. Mustache shaman literally wayfarers schlitz. Direct trade four loko narwhal VHS pop-up, chartreuse trust fund typewriter street art swag thundercats art party.`,
     },
 ]
+
+document.querySelector(".btn-toggle").addEventListener("click", () => {
+    document.querySelector("html").classList.toggle("dark")
+    document.querySelector("html").classList.contains("dark")
+        ? (document.querySelector(".btn-toggle").textContent = "light")
+        : (document.querySelector(".btn-toggle").textContent = "dark")
+})
+
+const articlesData = articles
+    .map((a) => {
+        return `<div class="card">
+                    <h1>${a.title}</h1>
+                    <div class="dates">
+                        <h3>${moment(a.date).format("MMMM Do, YYYY")}</h3>
+                        <h3>${a.length} min read</h3>
+                    </div>
+                    <p>
+                        ${a.snippet}
+                    </p>
+                </div>`
+    })
+    .join("")
+
+document.querySelector(".content").innerHTML = articlesData
